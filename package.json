@@ -1,0 +1,26 @@
+{
+  "name": "api-colorsai",
+  "version": "1.0.0",
+  "description": "api of color",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch ./api/index.js",
+    "start": "node ./api/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cohere-ai": "7.7.7",
+    "dotenv": "^16.4.5",
+    "fastify": "4.26.2"
+  },
+  "devDependencies": {
+    "standard": "17.1.0"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/standard/eslintrc.json"
+  }
+}
