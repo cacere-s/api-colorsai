@@ -7,13 +7,13 @@ built with fastify and cohere ai
 ### Install dependencies
 
 ```bash
-npm install
+pnpm install
 ```
 
 ### Run the development server
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 

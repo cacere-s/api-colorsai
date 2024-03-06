@@ -1,7 +1,7 @@
 {
   "name": "api-colorsai",
   "version": "1.0.0",
-  "description": "api of color",
+  "description": "UI Color Palette Generator API",
   "main": "index.js",
   "type": "module",
   "scripts": {
