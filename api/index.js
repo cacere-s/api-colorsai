@@ -12,10 +12,16 @@ fastify.get('/', async function handler (request, reply) {
 })
 
 // Run the server!
-try {
-  await fastify.listen({ port: process.env.PORT ?? 3000 })
+export default async function handler (req, reply) {
+  await fastify.ready()
+  fastify.server.emit('request', req, reply)
   console.log(`server listening on port ${fastify.server.address().port}`)
-} catch (err) {
-  fastify.log.error(err)
-  process.exit(1)
 }
+// Run the server!
+// try {
+//   await fastify.listen({ port: process.env.PORT ?? 3000 })
+//   console.log(`server listening on port ${fastify.server.address().port}`)
+// } catch (err) {
+//   fastify.log.error(err)
+//   process.exit(1)
+// }
