@@ -1,5 +1,5 @@
 import Fastify from 'fastify'
-import { ColorAI } from './cohere-ia.js'
+import { ColorAI } from '../utils/cohere-ia.js'
 
 const fastify = Fastify({
   logger: true
