@@ -1,5 +1,5 @@
 import Fastify from 'fastify'
-import { ColorAI } from '../utils/cohere-ia.js'
+import { ColorAI } from './cohere-ia.js'
 
 const fastify = Fastify({
   logger: true
@@ -8,20 +8,10 @@ const fastify = Fastify({
 // Declare a route
 fastify.get('/', async function handler (request, reply) {
   const responseAI = await ColorAI()
-  reply.send(responseAI)
+  return reply.status(200).send(responseAI)
 })
 
-// Run the server!
 export default async function handler (req, reply) {
   await fastify.ready()
   fastify.server.emit('request', req, reply)
-  console.log(`server listening on port ${fastify.server.address().port}`)
 }
-// Run the server!
-// try {
-//   await fastify.listen({ port: process.env.PORT ?? 3000 })
-//   console.log(`server listening on port ${fastify.server.address().port}`)
-// } catch (err) {
-//   fastify.log.error(err)
-//   process.exit(1)
-// }
