@@ -1,8 +1,12 @@
 import Fastify from 'fastify'
 import { ColorAI } from './cohere-ia.js'
+import cors from '@fastify/cors'
 
 const fastify = Fastify({
   logger: true
+})
+await fastify.register(cors, {
+  origin: '*'
 })
 
 // Declare a route
